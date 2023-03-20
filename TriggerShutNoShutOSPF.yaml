@@ -1,0 +1,4 @@
+TriggerShutNoShutOSPF:
+   source:
+     class: ospshutnoshut.ShutNoShutOSPF
+   devices: ['uut']

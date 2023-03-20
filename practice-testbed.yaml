@@ -1,0 +1,44 @@
+testbed:
+  name: CML-testbed
+
+devices:
+  R1:
+    type : 'router'
+    os: 'ios'
+    platform: 'iosv'
+    alias: 'uut'
+    credentials:
+      default:
+        username: netadmin
+        password: C!sco12345
+    connections:
+      cli:
+        protocol: ssh
+        ip: "10.85.48.140"
+
+  R2:
+    type : 'router'
+    os: 'ios'
+    platform: iosv
+    alias: 'router2'
+    credentials:
+      default:
+        username: netadmin
+        password: C!sco12345
+    connections:
+      cli:
+        protocol: ssh
+        ip: "10.85.48.139"
+
+topology:
+  R1:
+    interfaces:
+      GigabitEthernet0/0:
+        link: R1-R2
+        type: ethernet
+  R2:
+    interfaces:
+      GigabitEthernet0/0:
+        link: R1-R2
+        type: ethenet
+
